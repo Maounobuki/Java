@@ -27,7 +27,15 @@ public class main {
 
          */
         //Objective 2
-        IsLeapYear();
+        /* IsLeapYear();
+
+         */
+
+        //Objective 3
+       int [] array = FillArray();
+       System.out.println("Итоговый массив: "+Arrays.toString(array));
+        Reorder(array);
+
 
 
     }
@@ -73,18 +81,57 @@ public class main {
 //}
 
 //     Objective 2 methods
-    public static boolean IsLeapYear() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Введите год:");
-        int year  = in.nextInt();
+//    public static boolean IsLeapYear() {
+//        Scanner in = new Scanner(System.in);
+//        System.out.print("Введите год:");
+//        int year  = in.nextInt();
+//
+//        if (year % 4 != 0 || year % 100 == 0 && year % 400 != 0){
+//            System.out.print("false");
+//            return false;
+//        }
+//        else {
+//            System.out.print("true");
+//            return true;
+//        }
+//    }
+    //     Objective 3 methods
 
-        if (year % 4 != 0 || year % 100 == 0 && year % 400 != 0){
-            System.out.print("false");
-            return false;
-        }
+    private static int[] FillArray() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите количество элементов массива:");
+        int limit  = in.nextInt();
+        int [] numbers = new int[limit];
+        System.out.print("Введите минимальное значение элементов массива:");
+        int min_value = in.nextInt();
+        System.out.print("Введите максимальное значение элементов массива:");
+        int max_value = in.nextInt();
+        if  (min_value > max_value) {
+            System.out.println("Вы ввели неверные значения,  попробуйте ещё раз, следуя инструкциям!");
+            FillArray();}
         else {
-            System.out.print("true");
-            return true;
+            for (int i = 0; i < numbers.length; i++) {
+                numbers[i] = new Random().nextInt(min_value, max_value + 1);
+            }
         }
+       return numbers;
     }
+
+
+    private static void Reorder(int numbers [] ) {
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите значение переносимого элемента массива:");
+        int val  = in.nextInt();
+        int temp = 0;
+        for (int i = 0; i < numbers.length; i ++){
+            if (numbers[i] != val) {
+               numbers[temp++] = numbers [i];
+            }
+        }
+            while (temp < numbers.length)
+                numbers[temp++] = val;
+
+        System.out.println("Массив с перестановками: "+Arrays.toString(numbers));
     }
+}
