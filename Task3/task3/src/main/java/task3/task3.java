@@ -1,17 +1,18 @@
 package task3;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
 public class task3 {
     public static void main(String[] args) {
         evenRemove(fillArray());
-
+        printMinMaxAverage(fillArray());
 
 }
 
-//    Пусть дан произвольный список целых чисел, удалить из него четные числа
+// Задача 1.  Пусть дан произвольный список целых чисел, удалить из него четные числа
 //   (в языке уже есть что-то готовое для этого)
 
     public static ArrayList<Integer> fillArray (){
@@ -35,7 +36,32 @@ public class task3 {
         System.out.println(nums.toString());
     }
 
+
+    // Задача 2. Задан целочисленный список ArrayList.
+    // Найти минимальное, максимальное и среднее арифметическое из этого списка.
+
+    private static double calculateAverage(ArrayList<Integer> nums) {
+        double average = 0;
+        double sum = 0;
+        for (Integer i : nums) {
+            sum += i;
+        }
+        average = sum/nums.size();
+        return average;
     }
+
+    private static void printMinMaxAverage(ArrayList<Integer> nums) {
+
+        int maxValue = Collections.max(nums);
+        int minValue = Collections.min(nums);
+        double average = calculateAverage(nums) ;
+        System.out.printf("Максимальное значение среди элементов: %d\n",maxValue);
+        System.out.printf("Минимальное значение среди элементов: %d\n", minValue);
+        System.out.printf("Среднее арифметическое элементов: %.2f\n", average);}
+
+
+
+}
 
 
 
