@@ -1,15 +1,12 @@
 package task3;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class task3 {
     public static void main(String[] args) {
-        evenRemove(fillArray());
-        printMinMaxAverage(fillArray());
-
+       // evenRemove(fillArray());
+       // printMinMaxAverage(fillArray());
+        intRemover();
 }
 
 // Задача 1.  Пусть дан произвольный список целых чисел, удалить из него четные числа
@@ -57,11 +54,38 @@ public class task3 {
         double average = calculateAverage(nums) ;
         System.out.printf("Максимальное значение среди элементов: %d\n",maxValue);
         System.out.printf("Минимальное значение среди элементов: %d\n", minValue);
-        System.out.printf("Среднее арифметическое элементов: %.2f\n", average);}
+        System.out.printf("Среднее арифметическое элементов: %.2f\n", average);
+    }
+    private static void intRemover() {
+        //Задача 3. Создать список типа ArrayList<String>.
+        // Поместить в него как строки, так и целые числа. Пройти по списку, найти и удалить целые числа.
+        List<String> elements = List.of("-1","фывгшфр","alkaks","62716asdf","653","777","18","124");
 
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите размер массива: ");
+        int capacity = in.nextInt();
 
+        ArrayList<String> str = new ArrayList<>();
+        for (int i = 0; i < capacity; i++) {
+            int index = new Random().nextInt(elements.size());
+            str.add(elements.get(index));
+        }
+        System.out.println(str.toString());
 
+        for (int i = str.size()-1; i >= 0 ; i--) {
+            try {
+                Integer.parseInt(str.get(i));
+                str.remove(i);
+            } catch (NumberFormatException e) {
+                continue;
+            }
+        }
+        System.out.println(str.toString());
+    }
 }
+
+
+
 
 
 
