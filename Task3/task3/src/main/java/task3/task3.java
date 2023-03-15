@@ -56,10 +56,10 @@ public class task3 {
         System.out.printf("Минимальное значение среди элементов: %d\n", minValue);
         System.out.printf("Среднее арифметическое элементов: %.2f\n", average);
     }
+    //Задача 3. Создать список типа ArrayList<String>.
+    // Поместить в него как строки, так и целые числа. Пройти по списку, найти и удалить целые числа.
     private static void intRemover() {
-        //Задача 3. Создать список типа ArrayList<String>.
-        // Поместить в него как строки, так и целые числа. Пройти по списку, найти и удалить целые числа.
-        List<String> elements = List.of("-1","фывгшфр","alkaks","62716asdf","653","777","18","124");
+               List<String> elements = List.of("-1","фывгшфр","alkaks","62716asdf","653","777","18","124");
 
         Scanner in = new Scanner(System.in);
         System.out.println("Введите размер массива: ");
