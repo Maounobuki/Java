@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class task4 {public static void main(String[] args) {
     textApp();
+    listReverse();
 
 }
 
@@ -52,4 +53,23 @@ public class task4 {public static void main(String[] args) {
         in.close();
     }
 
+    private static void listReverse() {
+        // 2. Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернет “перевернутый” список.
+
+        LinkedList<String> pileOn = new LinkedList<>();
+        Collections.addAll(pileOn, "12", "2324", "sefgsbes", "dhrnse", "grsg", "dstbd");
+        System.out.println(Arrays.toString(pileOn.toArray()));
+        pileOn = reverse(pileOn);
+        System.out.println(Arrays.toString(pileOn.toArray()));
+    }
+
+    private static LinkedList<String> reverse(LinkedList<String> pile) {
+        for (int i = 0; i < pile.size(); i++) {
+            String temp = pile.removeLast();
+            pile.add(i, temp);
+        }
+        return pile;
+    }
 }
+
+
