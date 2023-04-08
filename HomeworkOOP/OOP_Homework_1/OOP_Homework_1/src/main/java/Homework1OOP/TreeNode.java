@@ -25,6 +25,6 @@ public abstract class TreeNode {
     }
 
     public String getNameData(){
-        return "Person is " + name + " " + surname;
+        return "Person" + name + " " + surname;
     }
 }

@@ -3,6 +3,9 @@ package Homework1OOP;
 import java.util.List;
 
 public class Main {
+
+
+
     public static void main(String[] args) {
 
         Persona per1 = new Persona("N1", "S1", Persona.Sex.MALE, null);
@@ -35,6 +38,7 @@ public class Main {
 
         Human dmitry = new Human("Дмитрий");
         Cat elvis = new Cat("Элвис");
+
 
         dmitry.buyCat(elvis);
         dmitry.callCat();
