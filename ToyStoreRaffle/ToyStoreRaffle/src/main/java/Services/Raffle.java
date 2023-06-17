@@ -90,7 +90,7 @@ public class Raffle {
                 System.out.println("вы проиграли, попробуйте cнова");
             }
             else if (num < chance) {
-                System.out.println("поздравляем, вы выиграли" +listToys.get(0));
+                System.out.println("поздравляем, вы выиграли");
                 saveInFile();
                 delete_toy_in_listToy(listToys.get(0));
             }
